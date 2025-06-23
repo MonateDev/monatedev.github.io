@@ -1,0 +1,284 @@
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2016 Daniel Eden
+ */
+
+
+.course_enrolled{background-color: #D6FF84 !important;}
+.course_equivilant{background-color: yellow !important;}
+.course_droped{background-color: red !important;}
+.course_eliminated{background-color: #D4AE94 !important;}
+.course_prohibited{background-color: #C56767 !important;}
+.course_cancelled{background-color: #ADD !important;}
+.course_exepted{background-color: #46a7b7 !important;}
+.course_transfered{background-color: #CAD25B !important;}
+.course_incomplete{background-color: #E3BF7C !important;}
+.course_with_drowal_pass{background-color: #8DD263 !important;}
+.course_with_drowal_fail{background-color: #879E78 !important;}
+.course_hold{background-color: #F7941E !important;}
+.course_continue{background-color: #AAB997 !important;}
+.course_exlude{background-color: #A4A9BB !important;}
+.course_repeted{background-color: #3AD254 !important;}
+.course_not_taken{background-color: #EFE9DD !important;}
+.course_inprogress{background-color: #D6FF84 !important;}
+.course_complete{background-color: #F0F8FF !important;}
+.course_failed{background-color: #ff3838 !important;}
+
+.course_status_passed{background-color: #006300 !important;}
+.course_status_fail{background-color: #C60000 !important;}
+
+
+
+
+.ui-datatable{text-align: center;}
+.ui-datatable-tablewrapper{text-align: center;}
+body .ui-panel .ui-panel-content{text-align: center;}
+.red{color: red;}
+.orange{color: orange;}
+.green{color: green;}
+body .ui-datatable .ui-paginator{direction: ltr;}
+.ui-columntoggler{direction: initial;}
+.landing-body .landing-wrapper #features .features-content img{height: 30%;}
+
+
+/* Font Sizes */
+.Fs9{font-size:9px !important;} 
+.Fs10{font-size:10px !important;} 
+.Fs11{font-size:11px !important;} 
+.Fs12{font-size:12px !important;} 
+.Fs13{font-size:13px !important;} 
+.Fs14{font-size:14px !important;} 
+.Fs15{font-size:15px !important;} 
+.Fs16{font-size:16px !important;} 
+.Fs17{font-size:17px !important;} 
+.Fs18{font-size:18px !important;} 
+.Fs19{font-size:19px !important;} 
+.Fs20{font-size:20px !important;} 
+.Fs21{font-size:21px !important;} 
+.Fs22{font-size:22px !important;} 
+.Fs23{font-size:23px !important;} 
+.Fs24{font-size:24px !important;} 
+.Fs25{font-size:25px !important;} 
+.Fs26{font-size:26px !important;} 
+.Fs27{font-size:27px !important;} 
+.Fs28{font-size:28px !important;} 
+.Fs29{font-size:29px !important;} 
+.Fs30{font-size:30px !important;}
+.Fs40{font-size:40px !important;}
+.Fs50{font-size:50px !important;}
+.Fs60{font-size:60px !important;}
+.Fs70{font-size:70px !important;}
+.Fs80{font-size:80px !important;}
+.Fs90{font-size:90px !important;}
+.Fs100{font-size:100px !important;}
+.Fs110{font-size:110px !important;}
+.Fs120{font-size:120px !important;}
+.Fs130{font-size:130px !important;}
+
+/* Font Type */
+.FontBold{ font-weight:bold;}
+.FontLight{ font-weight:lighter;}
+.FontNormal{ font-weight:normal;}
+
+.gray{color:#5A5A5A;}
+.softgray{color:#CDCDCD;}
+.yellow{color:#FFD100;}
+.white{ color:#ffffff;}
+.red{color:#e90c45;}
+.orange{color:#F15A29;}
+.softblue{color:#C1E1F4;}
+.hardblue{color:#778d9b;}
+.leaden{color:#778D9B;}
+
+/* dash board office hours */
+.dashboard .user-card .user-card-content{height: 100%  !important;;}
+
+
+/* Hayan Works */
+
+
+.ui-panelgrid .ui-panelgrid-cell{
+    border-width: 0px !important;;
+}
+body .ui-widget-content{
+    border: 0px !important;
+}
+body table{
+    border: 0px !important;
+}
+
+.ui-datepicker th{
+    font-size: 10px;
+}
+body .ui-widget-content .calendar-panel {
+    border: 0 !important;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+/* calendar */
+.calendar .ui-panelgrid .ui-panelgrid-cell{
+    border:none !important;
+}
+
+.calendar-facing-date {
+    text-align: center;
+    border-bottom: 1px solid rgba(69, 191, 178, 0.31);
+    padding: 5px 0 10px 0px;
+    box-shadow: 0px 2px rgba(136, 136, 136, 0.09);
+    margin-bottom: 5px;
+}
+
+.calendar-grid table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.dialog-calendar {
+    font-family: "GE_SS_Two_Light";
+}
+
+.dialog-calendar .ui-dialog-titlebar {
+    padding: 0px !important;
+    border-bottom: none !important;
+    background-color: white !important;
+}
+
+.dialog-calendar .ui-dialog-content.ui-widget-content {
+    padding: 7px;
+}
+
+.dialog-calendar .ui-state-default.ui-button {
+    border: none;
+}
+
+.dialog-calendar {
+    border-radius: 5px !important;
+}
+
+.calendar-btn {
+    padding: 5.5px !important;
+    background-color: #f1f1f2 !important;
+    border-bottom: none !important;
+    border-radius: 0 0 0 0 !important;
+    position: absolute !important;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    border-right-color: #f1f1f1 !important;
+}
+
+.dialog-calendar .current-month-label {
+    font-size: 20px;
+    color: #055d81;
+    float: left;
+}
+
+
+.cal-back-cmd {
+    float: left;
+}
+
+.dialog-calendar .selected-date {
+    border-bottom: solid 3px #e66b6b !important;
+    color: #428bca;
+    margin-right: -13px;
+    margin-left: -13px;
+    font-weight: bold;
+    padding: 11px 12px;
+    padding: 8px 6px;
+    overflow: hidden;
+}
+
+.dialog-calendar .current-date {
+    background-color: fuchsia;
+}
+.selected-date .regular-day {
+    background-color: red;
+}
+.holiday {
+    border: solid 1px #c7e6e6;
+    text-align: center;
+    padding: 8px;
+    font-size: 17px;
+    background-color: azure;
+}
+
+.regular-day {
+    border: solid 1px #eee;
+    padding: 8px;
+    text-align: center;
+    font-size: 17px;
+}
+.hday{
+    color: #e66b6b !important;
+    font-size: 11px;
+}
+.gday{
+    color: #e66b6b !important;
+    font-size: 11px;
+}
+/* calendar */
+
+*{
+    font-family: DroidKufiRegular;   
+}
+
+@font-face {
+    font-family: 'DroidKufiRegular';
+    src: url("/faces/javax.faces.resource/fonts/DroidKufiRegular.eot?ln=barcelona-layout");
+    src:
+        url("/faces/javax.faces.resource/fonts/DroidKufiRegular.eot?ln=barcelona-layout?#iefix")
+        format('embedded-opentype'),
+        url("/faces/javax.faces.resource/fonts/DroidKufiRegular.woff?ln=barcelona-layout")
+        format('woff'),
+        url("/faces/javax.faces.resource/fonts/DroidKufiRegular.ttf?ln=barcelona-layout")
+        format('truetype'),
+        url("/faces/javax.faces.resource/fonts/DroidKufiRegular.svg?ln=barcelona-layout#DroidKufiRegular")
+        format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.dashboard .contacts ul li .contact-info{
+    float: none !important;
+}
+
+.ui-selectonemenu .ui-selectonemenu-label{
+    text-align: center !important;
+}
+
+body .ui-state-active, body .ui-state-highlight{ 
+    background-color: #c4c4c4;
+}
+
+.icon-bar {
+  width: 100%; /* Full-width */
+  /*background-color: green;  Dark-grey background #555 */
+  overflow: auto; /* Overflow due to float */
+  
+}
+
+.icon-bar a {
+  float: right;  /*Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 25%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: white; /* White text color */
+  font-size: 20px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #F7941E; /* Add a hover color */
+}
+
+.active {
+  background-color: #4CAF50; /* Add an active/current color #4CAF50*/
+}
+
+

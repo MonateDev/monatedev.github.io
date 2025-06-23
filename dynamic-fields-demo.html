@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="RTL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة البيانات الشخصية - البوابة الأكاديمية</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="faces/javax.faces.resource/css/dynamic-fields.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            direction: rtl;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-panel {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .student-info-demo, .academic-info-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .info-label {
+            font-weight: bold;
+        }
+        .info-value {
+            color: #666;
+        }
+        .knob-demo {
+            text-align: center;
+            padding: 20px;
+        }
+        .knob {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #007bff;
+            color: white;
+            line-height: 80px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .demo-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .demo-button:hover {
+            background: #0056b3;
+        }
+        .topbar-demo {
+            background: #343a40;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .profile-info-demo {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        /* Image Upload Styles */
+        .image-upload-demo {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .image-upload-area {
+            border: 2px dashed #007bff;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 250px;
+            flex: 1;
+        }
+        .image-upload-area:hover {
+            border-color: #0056b3;
+            background: #e3f2fd;
+        }
+        .image-upload-area.drag-over {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        .uploaded-image-preview {
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .uploaded-image-preview img {
+            width: 100%;
+            max-height: 400px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+        .image-info {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        .image-actions {
+            margin-top: 10px;
+        }
+        .image-actions button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>إدارة البيانات الشخصية</h1>
+            <p>تخصيص وإدارة المعلومات الأكاديمية والشخصية</p>
+            <div style="margin-top: 15px;">
+                <button class="demo-button" onclick="showDynamicFieldsSettings()">
+                    <i class="fa fa-cog"></i> إعدادات البيانات الشخصية
+                </button>
+                <button class="demo-button" onclick="DynamicFields.randomizeAllFields()" style="background: linear-gradient(45deg, #ff6b6b, #feca57); margin-right: 10px;">
+                    <i class="fa fa-random"></i> بيانات تجريبية
+                </button>
+                <button class="demo-button" onclick="window.open('/faces/ui/pages/student/index.xhtml', '_blank')" style="background: #28a745; margin-right: 10px;">
+                    <i class="fa fa-home"></i> الذهاب إلى البوابة
+                </button>
+            </div>
+        </div>
+
+        <!-- Top Bar Demo -->
+        <div class="topbar-demo">
+            <div>
+                <h3>البوابة الالكترونية</h3>
+            </div>
+            <div class="profile-info-demo">
+                <span class="dynamic-profile-name"></span>
+                <span class="dynamic-profile-role"></span>
+            </div>
+        </div>
+
+        <!-- Student Information Demo -->
+        <div class="demo-panel">
+            <h3>معلومات الطالب</h3>
+            <div class="student-info-demo">
+                <div class="info-item">
+                    <span class="info-label">رقم الطالب:</span>
+                    <span class="info-value dynamic-student-id"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">اسم الطالب:</span>
+                    <span class="info-value dynamic-student-name"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">الفصل الدراسي:</span>
+                    <span class="info-value dynamic-semester"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">الكلية:</span>
+                    <span class="info-value dynamic-college"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">التخصص:</span>
+                    <span class="info-value dynamic-major"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">الحالة:</span>
+                    <span class="info-value dynamic-status"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">المرشد الاكاديمي:</span>
+                    <span class="info-value dynamic-advisor"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Upload Demo -->
+        <div class="demo-panel">
+            <h3>رفع الصورة الشخصية</h3>
+            <div class="image-upload-demo">
+                <div class="image-upload-area" id="imageUploadArea">
+                    <i class="fa fa-cloud-upload" style="font-size: 48px; color: #007bff; margin-bottom: 15px;"></i>
+                    <p>اسحب الصورة هنا أو اضغط للاختيار</p>
+                    <p style="font-size: 12px; color: #666;">يدعم: JPG, PNG, GIF (حد أقصى: 10MB)</p>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+                <div id="imagePreviewContainer" style="display: none;">
+                    <div class="uploaded-image-preview">
+                        <img id="imagePreview" src="" alt="معاينة الصورة">
+                        <div class="image-info">
+                            <div>الاسم: <span id="imageName"></span></div>
+                            <div>الحجم: <span id="imageSize"></span></div>
+                            <div>النوع: <span id="imageType"></span></div>
+                        </div>
+                        <div class="image-actions">
+                            <button class="demo-button" onclick="removeImage()" style="background: #dc3545;">
+                                <i class="fa fa-trash"></i> حذف
+                            </button>
+                            <button class="demo-button" onclick="downloadImage()">
+                                <i class="fa fa-download"></i> تحميل
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Information Demo -->
+        <div class="demo-panel">
+            <h3>المعلومات الأكاديمية</h3>
+            <div class="knob-demo">
+                <div>
+                    <div class="knob dynamic-gpa"></div>
+                    <div>المعدل التراكمي</div>
+                </div>
+                <div>
+                    <div class="knob dynamic-completion"></div>
+                    <div>انجاز الخطة (%)</div>
+                </div>
+                <div>
+                    <div class="knob dynamic-level"></div>
+                    <div>مستوى الطالب</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Information Demo -->
+        <div class="demo-panel">
+            <h3>المعلومات المالية</h3>
+            <div class="info-item">
+                <span class="info-label">الرصيد:</span>
+                <span class="info-value dynamic-balance"></span>
+            </div>
+        </div>
+
+        <!-- Enrolled Courses Demo -->
+        <div class="demo-panel">
+            <h3>المقررات المسجلة</h3>
+            <div style="overflow-x: auto;">
+                <table class="dynamic-courses-table" style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <thead>
+                        <tr style="background: #f8f9fa;">
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">رمز المقرر</th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">اسم المقرر</th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">الشعبة</th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">النشاط</th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">القاعة</th>
+                            <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">الوقت</th>
+                        </tr>
+                    </thead>
+                    <tbody id="demo-courses-table">
+                        <!-- Courses will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="demo-panel">
+            <h3>كيفية الاستخدام</h3>
+            <ol>
+                <li>اضغط على زر "إعدادات البيانات الشخصية" في الأعلى</li>
+                <li>قم بتعديل المعلومات حسب احتياجاتك</li>
+                <li>شاهد التحديثات تظهر مباشرة على الشاشة</li>
+                <li>اضغط "حفظ التغييرات" لحفظ الإعدادات</li>
+                <li>يمكنك تصدير أو استيراد الإعدادات</li>
+            </ol>
+            <p><strong>ملاحظة:</strong> البيانات محفوظة بشكل آمن في التخزين المحلي وستبقى متاحة حتى بعد إعادة تحميل الصفحة.</p>
+        </div>
+    </div>
+
+    <!-- Personal Data Settings Dialog -->
+    <div id="dynamic-fields-dialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container ui-dialog-rtl" style="width: 80%; max-width: 1000px; display: none; position: fixed; z-index: 1001;">
+        <div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top">
+            <span class="ui-dialog-title">إعدادات البيانات الشخصية</span>
+            <a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close" onclick="hideDynamicFieldsSettings(); return false;">
+                <span class="ui-icon ui-icon-closethick">&times;</span>
+            </a>
+        </div>
+        <div class="ui-dialog-content ui-widget-content" style="height: 600px; overflow-y: auto;">
+            <div id="dynamic-fields-container">
+                <!-- Personal data settings form will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="faces/javax.faces.resource/js/dynamic-fields.js"></script>
+    <script>
+        // Image Upload Functionality
+        const IMAGE_STORAGE_KEY = 'portal-uploaded-image';
+        const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB (increased from 5MB)
+        
+        function initializeImageUpload() {
+            const uploadArea = document.getElementById('imageUploadArea');
+            const fileInput = document.getElementById('imageInput');
+            const previewContainer = document.getElementById('imagePreviewContainer');
+            
+            // Click to upload
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // File input change
+            fileInput.addEventListener('change', (e) => {
+                handleFileSelect(e.target.files[0]);
+            });
+            
+            // Drag and drop functionality
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('drag-over');
+            });
+            
+            uploadArea.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('drag-over');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('drag-over');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileSelect(files[0]);
+                }
+            });
+            
+            // Load existing image from localStorage
+            loadImageFromStorage();
+        }
+        
+        function handleFileSelect(file) {
+            if (!file) return;
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                alert('يرجى اختيار ملف صورة صالح');
+                return;
+            }
+            
+            // Validate file size
+            if (file.size > MAX_FILE_SIZE) {
+                alert('حجم الملف كبير جداً. الحد الأقصى هو 10MB');
+                return;
+            }
+            
+            // Read and process the file
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageData = {
+                    name: file.name,
+                    size: formatFileSize(file.size),
+                    type: file.type,
+                    data: e.target.result, // base64 data
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Save to localStorage
+                saveImageToStorage(imageData);
+                
+                // Display preview
+                displayImagePreview(imageData);
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        function saveImageToStorage(imageData) {
+            try {
+                // Compress image data for better storage efficiency
+                const compressedData = {
+                    ...imageData,
+                    compressed: true
+                };
+                
+                localStorage.setItem(IMAGE_STORAGE_KEY, JSON.stringify(compressedData));
+                console.log('Image saved to localStorage successfully');
+            } catch (error) {
+                console.error('Error saving image to localStorage:', error);
+                alert('حدث خطأ في حفظ الصورة. قد يكون حجم الصورة كبيراً جداً.');
+            }
+        }
+        
+        function loadImageFromStorage() {
+            try {
+                const storedData = localStorage.getItem(IMAGE_STORAGE_KEY);
+                if (storedData) {
+                    const imageData = JSON.parse(storedData);
+                    displayImagePreview(imageData);
+                }
+            } catch (error) {
+                console.error('Error loading image from localStorage:', error);
+            }
+        }
+        
+        function displayImagePreview(imageData) {
+            const previewContainer = document.getElementById('imagePreviewContainer');
+            const uploadArea = document.getElementById('imageUploadArea');
+            const preview = document.getElementById('imagePreview');
+            const nameSpan = document.getElementById('imageName');
+            const sizeSpan = document.getElementById('imageSize');
+            const typeSpan = document.getElementById('imageType');
+            
+            // Set image and info
+            preview.src = imageData.data;
+            nameSpan.textContent = imageData.name;
+            sizeSpan.textContent = imageData.size;
+            typeSpan.textContent = imageData.type;
+            
+            // Show preview, hide upload area
+            uploadArea.style.display = 'none';
+            previewContainer.style.display = 'block';
+        }
+        
+        function removeImage() {
+            try {
+                localStorage.removeItem(IMAGE_STORAGE_KEY);
+                
+                // Reset UI
+                const previewContainer = document.getElementById('imagePreviewContainer');
+                const uploadArea = document.getElementById('imageUploadArea');
+                const fileInput = document.getElementById('imageInput');
+                
+                previewContainer.style.display = 'none';
+                uploadArea.style.display = 'block';
+                fileInput.value = '';
+                
+                console.log('Image removed from localStorage');
+            } catch (error) {
+                console.error('Error removing image:', error);
+            }
+        }
+        
+        function downloadImage() {
+            try {
+                const storedData = localStorage.getItem(IMAGE_STORAGE_KEY);
+                if (storedData) {
+                    const imageData = JSON.parse(storedData);
+                    
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.href = imageData.data;
+                    link.download = imageData.name;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            } catch (error) {
+                console.error('Error downloading image:', error);
+                alert('حدث خطأ في تحميل الصورة');
+            }
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // Function to get uploaded image data (for integration with other systems)
+        function getUploadedImageData() {
+            try {
+                const storedData = localStorage.getItem(IMAGE_STORAGE_KEY);
+                return storedData ? JSON.parse(storedData) : null;
+            } catch (error) {
+                console.error('Error getting image data:', error);
+                return null;
+            }
+        }
+        
+        function showDynamicFieldsSettings() {
+            const dialog = document.getElementById('dynamic-fields-dialog');
+            const container = document.getElementById('dynamic-fields-container');
+            
+            // Generate and insert the settings form
+            container.innerHTML = DynamicFields.generateSettingsForm();
+            DynamicFields.attachSettingsEventListeners();
+            
+            // Show the dialog
+            dialog.style.display = 'block';
+            dialog.classList.remove('ui-hidden-container');
+            
+            // Center the dialog
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const dialogWidth = dialog.offsetWidth;
+            const dialogHeight = dialog.offsetHeight;
+            
+            dialog.style.left = Math.max(0, (windowWidth - dialogWidth) / 2) + 'px';
+            dialog.style.top = Math.max(0, (windowHeight - dialogHeight) / 2) + 'px';
+            
+            // Add overlay
+            if (!document.querySelector('.ui-widget-overlay')) {
+                const overlay = document.createElement('div');
+                overlay.className = 'ui-widget-overlay ui-front';
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                overlay.style.zIndex = '1000';
+                overlay.onclick = function() { hideDynamicFieldsSettings(); };
+                document.body.appendChild(overlay);
+            }
+        }
+
+        function hideDynamicFieldsSettings() {
+            const dialog = document.getElementById('dynamic-fields-dialog');
+            const overlay = document.querySelector('.ui-widget-overlay');
+            
+            dialog.style.display = 'none';
+            dialog.classList.add('ui-hidden-container');
+            
+            if (overlay) {
+                overlay.parentNode.removeChild(overlay);
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Personal Data Management page loading...');
+            
+            // Initialize image upload functionality
+            initializeImageUpload();
+            
+            // Initialize dynamic fields
+            DynamicFields.initializeFields();
+            
+            // Add highlighting to dynamic fields
+            setTimeout(function() {
+                const dynamicFields = document.querySelectorAll('[class*="dynamic-"]');
+                console.log('Found dynamic fields:', dynamicFields.length);
+                
+                dynamicFields.forEach(field => {
+                    field.classList.add('dynamic-field-highlight');
+                    field.setAttribute('title', 'حقل ديناميكي - يمكن تخصيصه من الإعدادات');
+                    field.style.cursor = 'pointer';
+                    field.style.border = '1px dashed #007bff';
+                    field.style.padding = '2px 4px';
+                    field.style.borderRadius = '3px';
+                    
+                    // Add click handler
+                    field.addEventListener('click', function() {
+                        showDynamicFieldsSettings();
+                    });
+                });
+                
+                console.log('Dynamic fields setup complete');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

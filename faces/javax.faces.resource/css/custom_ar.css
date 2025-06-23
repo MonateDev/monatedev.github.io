@@ -1,0 +1,43 @@
+.ui-breadcrumb ul li {
+    float: right;
+}
+
+.ui-breadcrumb .ui-icon-triangle-1-e {
+    transform: rotate(180deg);
+}
+.ui-datepicker-rtl .ui-datepicker-prev{
+    right: inherit !important;        
+}
+
+.dashboard .chat ul li span{
+    float: right ;
+}
+
+.dashboard .user-card .user-card-content .user-detail ul li i{
+    float: right ;
+}
+.dashboard .user-card .user-card-content .user-detail ul li .project-title{
+    float: right ;
+}
+.dashboard .user-card .user-card-content .user-detail ul li .project-detail{
+    float: right ;
+    padding: 0 7% 0 0;
+}
+.dashboard .user-card .user-card-content .user-detail ul li .project-progressbar{
+    float: left ;
+}
+
+.dashboard .contacts ul li img{
+    float: right;
+}
+
+.ui-datatable-reflow .ui-datatable-data td[role="gridcell"] .ui-column-title{
+    float: right;
+}
+.ui-datatable-reflow .ui-datatable-data td[role="gridcell"]{
+    text-align: center;
+}
+
+.ui-fieldset .ui-fieldset-toggler{
+    float: right;
+}

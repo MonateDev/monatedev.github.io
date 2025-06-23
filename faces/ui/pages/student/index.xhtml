@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="j_idt2">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <link rel="shortcut icon" type="image/x-icon" href="/resources/barcelona-layout/images/x-icon.jpeg" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+            <meta name="apple-mobile-web-app-capable" content="yes" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/theme.css?ln=primefaces-barcelona-deep-purple" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/fa/font-awesome.css?ln=primefaces&amp;v=6.0" /><script type="text/javascript" src="/faces/javax.faces.resource/jquery/jquery.js?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/faces/javax.faces.resource/jquery/jquery-plugins.js?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/faces/javax.faces.resource/core.js?ln=primefaces&amp;v=6.0"></script><script type="text/javascript" src="/faces/javax.faces.resource/components.js?ln=primefaces&amp;v=6.0"></script><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/components.css?ln=primefaces&amp;v=6.0" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/charts/charts.css?ln=primefaces&amp;v=6.0" /><script type="text/javascript" src="/faces/javax.faces.resource/charts/charts.js?ln=primefaces&amp;v=6.0"></script><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/scrollpanel/scrollpanel.css?ln=primefaces&amp;v=6.0" /><script type="text/javascript" src="/faces/javax.faces.resource/scrollpanel/scrollpanel.js?ln=primefaces&amp;v=6.0"></script><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/nanoscroller.css?ln=barcelona-layout" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/animate.css?ln=barcelona-layout" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/ripple.css?ln=barcelona-layout" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/custom_edu.css?ln=barcelona-layout" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/layout-deep-purple.css?ln=barcelona-layout" /><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/custom_ar.css?ln=barcelona-layout" /><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='ar';}</script>
+        <title>جامعة الزيتونة الأردنية</title><script type="text/javascript" src="/faces/javax.faces.resource/js/nanoscroller.js?ln=barcelona-layout"></script><script type="text/javascript" src="/faces/javax.faces.resource/js/layout.js?ln=barcelona-layout"></script><script type="text/javascript" src="/faces/javax.faces.resource/js/common.js?ln=barcelona-layout"></script><script type="text/javascript" src="/faces/javax.faces.resource/js/dynamic-fields.js?ln=barcelona-layout"></script><link type="text/css" rel="stylesheet" href="/faces/javax.faces.resource/css/dynamic-fields.css?ln=barcelona-layout" /></head><body class="main-body" dir="RTL">  
+            <div class="layout-wrapper  layout-rtl">
+
+    <div class="topbar">
+        <div class="logo"><a href="/faces/ui/pages/student/index.xhtml"><img id="j_idt14" src="/faces/javax.faces.resource/images/x-icon.jpeg?ln=barcelona-layout" alt="" /></a>
+        </div>
+
+        <a id="topbar-menu-button" href="#">
+            <i class="fa fa-bars"></i>
+        </a><a href="/faces/ui/pages/student/index.xhtml" class="app-name white">البوابة الالكترونية</a>
+
+        <ul class="topbar-menu fadeInDown animated">
+            <li class="profile-item">
+                <a href="#">                            
+                    <div class="profile-image"><img id="j_idt18" src="/faces/javax.faces.resource/no_image.png?ln=barcelona-layout/images" alt="" title="" class="dynamic-student-photo" />
+                    </div>
+                    <div class="profile-info">
+                        <span class="topbar-item-name profile-name dynamic-student-name"></span>
+                        <span class="topbar-item-name profile-role">طالب</span>
+                    </div>
+                </a>
+
+                <ul class="animated">
+
+                    <li role="menuitem"><a id="j_idt20" href="#" class="ui-commandlink ui-widget Animated05" onclick="PF('userPreferencesDialog').show();;PrimeFaces.ab({s:&quot;j_idt20&quot;});return false;">
+                            <i class="fa fa-fw fa-cog"></i>
+                            خصائص المستخدم
+                        </a>
+
+                    </li>
+                    <li role="menuitem">
+<form id="j_idt23" name="j_idt23" method="post" action="/faces/ui/pages/student/index.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt23" value="j_idt23" />
+<a id="j_idt23:j_idt24" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.addSubmitParam('j_idt23',{'j_idt23:j_idt24':'j_idt23:j_idt24'}).submit('j_idt23');return false;">
+                                <i class="fa fa-fw fa-sign-out"></i>
+                                خروج
+                            </a><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-3532414394862448692:-3417641270037045008" autocomplete="off" />
+</form>
+                    </li>
+                </ul>
+            </li>
+                <li>
+                    <a href="#" title="الرسائل">
+                        <i class="topbar-icon material-icons animated swing fa fa-fw fa-envelope-o"></i>
+                        <span class="topbar-badge animated rubberBand" style="background: #ff432e; color: #ffffff;">0</span>
+                        <span class="topbar-item-name">الرسائل</span>
+                    </a>
+                </li>
+            <li>
+                <a href="#" title="تنبيه الغياب">
+                    <i class="topbar-icon fa fa-fw fa-bell-o"></i>
+                    <span class="topbar-badge animated rubberBand" style="background: #ff432e; color: #ffffff;">
+                        0
+                    </span>
+                    <span class="topbar-item-name"> تنبيه الغياب</span>
+                </a>
+            </li>
+
+        </ul>
+<form id="j_idt38" name="j_idt38" method="post" action="/faces/ui/pages/student/index.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt38" value="j_idt38" />
+<div id="j_idt38:j_idt39" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container ui-dialog-rtl"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="j_idt38:j_idt39_title" class="ui-dialog-title">خصائص المستخدم</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content"><table id="j_idt38:j_idt40" class="ui-panelgrid ui-widget" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="j_idt38:j_idt41" class="ui-outputlabel ui-widget">اللغة المفضلة</label></td><td role="gridcell" class="ui-panelgrid-cell"><div id="j_idt38:j_idt42" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all"><div class="ui-helper-hidden-accessible"><input id="j_idt38:j_idt42_focus" name="j_idt38:j_idt42_focus" type="text" autocomplete="off" role="combobox" aria-haspopup="true" aria-expanded="false" /></div><div class="ui-helper-hidden-accessible"><select id="j_idt38:j_idt42_input" name="j_idt38:j_idt42_input" tabindex="-1"><option value="">يرجى الاختيار ...</option><option value="1" selected="selected">العربية</option><option value="2">English</option></select></div><label id="j_idt38:j_idt42_label" class="ui-selectonemenu-label ui-inputfield ui-corner-all"></label><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="j_idt38:j_idt42_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow"><div class="ui-selectonemenu-items-wrapper" style="height:auto"><ul id="j_idt38:j_idt42_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox"><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="يرجى الاختيار ..." tabindex="-1" role="option">يرجى الاختيار ...</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="العربية" tabindex="-1" role="option">العربية</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="English" tabindex="-1" role="option">English</li></ul></div></div></div><script id="j_idt38:j_idt42_s" type="text/javascript">$(function(){PrimeFaces.cw("SelectOneMenu","widget_j_idt38_j_idt42",{id:"j_idt38:j_idt42"});});</script></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="j_idt38:j_idt45" class="ui-outputlabel ui-widget">تلقي التنبيهات ؟</label></td><td role="gridcell" class="ui-panelgrid-cell"><div id="j_idt38:j_idt46" class="ui-chkbox ui-widget"><div class="ui-helper-hidden-accessible"><input id="j_idt38:j_idt46_input" name="j_idt38:j_idt46_input" type="checkbox" autocomplete="off" checked="checked" aria-checked="true" /></div><div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ui-state-active"><span class="ui-chkbox-icon ui-icon ui-icon-check ui-c"></span></div></div><script id="j_idt38:j_idt46_s" type="text/javascript">PrimeFaces.cw("SelectBooleanCheckbox","widget_j_idt38_j_idt46",{id:"j_idt38:j_idt46"});</script></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="j_idt38:j_idt47" class="ui-outputlabel ui-widget">لون البوابة المفضل</label></td><td role="gridcell" class="ui-panelgrid-cell"><div id="j_idt38:j_idt48" class="ui-selectonemenu ui-widget ui-state-default ui-corner-all"><div class="ui-helper-hidden-accessible"><input id="j_idt38:j_idt48_focus" name="j_idt38:j_idt48_focus" type="text" autocomplete="off" role="combobox" aria-haspopup="true" aria-expanded="false" /></div><div class="ui-helper-hidden-accessible"><select id="j_idt38:j_idt48_input" name="j_idt38:j_idt48_input" tabindex="-1" onchange="PrimeFaces.ab({s:&quot;j_idt38:j_idt48&quot;,e:&quot;change&quot;,p:&quot;j_idt38:j_idt48&quot;});"><option value="">يرجى الاختيار ...</option><option value="blue">blue</option><option value="teal">teal</option><option value="cyan">cyan</option><option value="blue-grey">blue-grey</option><option value="dark-blue">dark-blue</option><option value="dark-green">dark-green</option><option value="light-blue">light-blue</option><option value="indigo">indigo</option><option value="deep-purple" selected="selected">deep-purple</option><option value="green">green</option></select></div><label id="j_idt38:j_idt48_label" class="ui-selectonemenu-label ui-inputfield ui-corner-all"></label><div class="ui-selectonemenu-trigger ui-state-default ui-corner-right"><span class="ui-icon ui-icon-triangle-1-s ui-c"></span></div><div id="j_idt38:j_idt48_panel" class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow"><div class="ui-selectonemenu-items-wrapper" style="height:200px"><ul id="j_idt38:j_idt48_items" class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" role="listbox"><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="يرجى الاختيار ..." tabindex="-1" role="option">يرجى الاختيار ...</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="blue" tabindex="-1" role="option">blue</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="teal" tabindex="-1" role="option">teal</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="cyan" tabindex="-1" role="option">cyan</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="blue-grey" tabindex="-1" role="option">blue-grey</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="dark-blue" tabindex="-1" role="option">dark-blue</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="dark-green" tabindex="-1" role="option">dark-green</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="light-blue" tabindex="-1" role="option">light-blue</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="indigo" tabindex="-1" role="option">indigo</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="deep-purple" tabindex="-1" role="option">deep-purple</li><li class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all" data-label="green" tabindex="-1" role="option">green</li></ul></div></div></div><script id="j_idt38:j_idt48_s" type="text/javascript">$(function(){PrimeFaces.cw("SelectOneMenu","widget_j_idt38_j_idt48",{id:"j_idt38:j_idt48",behaviors:{change:function(ext,event) {PrimeFaces.ab({s:"j_idt38:j_idt48",e:"change",p:"j_idt38:j_idt48"},ext);}}});});</script></td></tr></tbody></table><img id="j_idt38:j_idt60" height="10px;" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" /><button id="j_idt38:saveUserPreferenceBtn" name="j_idt38:saveUserPreferenceBtn" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left red-btn" onclick="PrimeFaces.ab({s:&quot;j_idt38:saveUserPreferenceBtn&quot;,onco:function(xhr,status,args){PF('userPreferencesDialog').hide();;}});return false;" title="حفظ" type="submit"><span class="ui-button-icon-left ui-icon ui-c fa fa-save white"></span><span class="ui-button-text ui-c">حفظ</span></button><script id="j_idt38:saveUserPreferenceBtn_s" type="text/javascript">PrimeFaces.cw("CommandButton","widget_j_idt38_saveUserPreferenceBtn",{id:"j_idt38:saveUserPreferenceBtn"});</script><img id="j_idt38:j_idt61" width="10px;" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" /><button id="j_idt38:j_idt62" name="j_idt38:j_idt62" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left orange-btn" onclick="PrimeFaces.ab({s:&quot;j_idt38:j_idt62&quot;,onco:function(xhr,status,args){PF('userPreferencesDialog').hide();;}});return false;" title="الغاء" type="submit"><span class="ui-button-icon-left ui-icon ui-c fa fa-close white"></span><span class="ui-button-text ui-c">الغاء</span></button><script id="j_idt38:j_idt62_s" type="text/javascript">PrimeFaces.cw("CommandButton","widget_j_idt38_j_idt62",{id:"j_idt38:j_idt62"});</script></div></div><script id="j_idt38:j_idt39_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","userPreferencesDialog",{id:"j_idt38:j_idt39",closeOnEscape:true});});</script><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="-3532414394862448692:-3417641270037045008" autocomplete="off" />
+</form>
+    </div>
+
+    <div class="layout-sidebar "><div id="j_idt65" class="layout-tabmenu"><ul class="layout-tabmenu-nav"><li><a href="#" class="ripplelink tabmenuitem-link"><i class="material-icons">home</i></a><div class="layout-tabmenu-tooltip"><div class="layout-tabmenu-tooltip-arrow"></div><div class="layout-tabmenu-tooltip-text">الصفحة الرئيسية</div></div></li><li><a href="#" class="ripplelink tabmenuitem-link"><i class="material-icons">inbox</i></a><div class="layout-tabmenu-tooltip"><div class="layout-tabmenu-tooltip-arrow"></div><div class="layout-tabmenu-tooltip-text">الرسائل الواردة</div></div></li><li><a href="#" class="ripplelink tabmenuitem-link"><i class="material-icons">people</i></a><div class="layout-tabmenu-tooltip"><div class="layout-tabmenu-tooltip-arrow"></div><div class="layout-tabmenu-tooltip-text">الهيئة التدريسية</div></div></li></ul><div class="layout-tabmenu-contents"><div class="layout-tabmenu-content"><div class="layout-submenu-title clearfix"><span>الصفحة الرئيسية</span><a href="#" class="menu-button material-icons">menu</a><a href="#" class="menu-pin-button"><i class="fa fa-thumb-tack fa-rotate-90"></i></a></div><div class="layout-submenu-content"><div class="nano"><div class="nano-content menu-scroll-content">
+<form id="menu-form" name="menu-form" method="post" action="/faces/ui/pages/student/index.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="menu-form" value="menu-form" />
+<ul id="menu-form:j_idt67" class="navigation-menu"><li id="menu-form:um_dashboard" role="menuitem"><a class="ripplelink" href="/faces/ui/pages/student/index.xhtml"><i class="material-icons"></i><span>الصفحة الرئيسية</span></a></li><li id="menu-form:um_customization1" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>أوضاع القائمة</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:menu1" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:menu1':'menu-form:menu1'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Light Menu</span></a></li><li id="menu-form:menu2" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:menu2':'menu-form:menu2'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Dark Menu</span></a></li><li id="menu-form:menu3" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:menu3':'menu-form:menu3'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Static Menu</span></a></li><li id="menu-form:menu4" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:menu4':'menu-form:menu4'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Overlay Menu</span></a></li></ul></li><li id="menu-form:om_orientation" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>اللغة</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:om_ltr" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:om_ltr':'menu-form:om_ltr'}).submit('menu-form');return false;"><i class="material-icons"></i><span>الانجليزية</span></a></li><li id="menu-form:om_rtl" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:om_rtl':'menu-form:om_rtl'}).submit('menu-form');return false;"><i class="material-icons"></i><span>العربية</span></a></li></ul></li><li id="menu-form:um_themes" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>القوالب</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:theme1" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme1':'menu-form:theme1'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Blue - Amber</span></a></li><li id="menu-form:theme2" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme2':'menu-form:theme2'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Teal - Amber</span></a></li><li id="menu-form:theme3" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme3':'menu-form:theme3'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Blue Grey - Green</span></a></li><li id="menu-form:theme4" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme4':'menu-form:theme4'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Cyan - Yellow</span></a></li><li id="menu-form:theme5" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme5':'menu-form:theme5'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Dark - Blue</span></a></li><li id="menu-form:theme6" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme6':'menu-form:theme6'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Dark - Green</span></a></li><li id="menu-form:theme7" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme7':'menu-form:theme7'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Light Blue - Green</span></a></li><li id="menu-form:theme8" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme8':'menu-form:theme8'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Indigo - Cyan</span></a></li><li id="menu-form:theme9" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme9':'menu-form:theme9'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Deep Purple - Pink</span></a></li><li id="menu-form:theme10" role="menuitem"><a class="ripplelink" href="#" onclick="PrimeFaces.addSubmitParam('menu-form',{'menu-form:theme10':'menu-form:theme10'}).submit('menu-form');return false;"><i class="material-icons"></i><span>Green - Yellow</span></a></li></ul></li><li id="menu-form:j_idt68" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>أكاديمي</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:j_idt69" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/schedule/index.xhtml"><span>الجدول الدراسي</span></a></li><li id="menu-form:j_idt70" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/evaluation/index.xhtml"><span>التقييم</span></a></li><li id="menu-form:j_idt71" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/instantMessages/index.xhtml"><span>التراسل</span></a></li><li id="menu-form:j_idt72" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/homeworks/index.xhtml"><span>الواجبات الدراسية</span></a></li><li id="menu-form:j_idt73" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/placementExams/index.xhtml"><span>نتائج امتحان المستوى</span></a></li></ul></li><li class="Separator"></li><li id="menu-form:j_idt80" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>شخصي</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:j_idt75" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/financialRecord/index.xhtml"><span>السجل المالي</span></a></li><li id="menu-form:j_idt76" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/custodians/index.xhtml"><span>عهدة الطالب</span></a></li><li id="menu-form:j_idt77" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/absence/index.xhtml"><span>كشف الغيابات</span></a></li><li id="menu-form:j_idt78" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/punishes/index.xhtml"><span>العقوبات</span></a></li><li id="menu-form:j_idt81" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/profile/myProfile.xhtml"><span>معلومات الطالب</span></a></li><li id="menu-form:j_idt82" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/suspensions/index.xhtml"><span>التعليق</span></a></li><li id="menu-form:j_idt83" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/violations/index.xhtml"><span>المخالفات</span></a></li><li id="menu-form:j_idt84" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/examSchedule/index.xhtml"><span>جدول االامتحانات</span></a></li><li id="menu-form:j_idt85" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/updateStudentInfo/index.xhtml"><span>تعديل بياناتي</span></a></li></ul></li><li class="Separator"></li><li id="menu-form:j_idt91" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>التسجيل</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:j_idt86" role="menuitem"><a style="color: #null;" class="ripplelink fa fa-check" href="/faces/ui/pages/student/registration/index.xhtml"><span>التسجيل الإلكتروني</span></a></li></ul></li><li class="Separator"></li><li id="menu-form:j_idt94" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons"></i><span>روابط خاصة بالطالب</span><span class="ink animate"></span><i class="material-icons">keyboard_arrow_down</i></a><ul role="menu"><li id="menu-form:j_idt95" role="menuitem"><a class="ripplelink" href="https://www.zuj.edu.jo" target="_blank"><i class="material-icons">apps</i><span>موقع الجامعة الرئيسي</span></a></li><li id="menu-form:j_idt96" role="menuitem"><a class="ripplelink" href="https://login.microsoftonline.com" target="_blank"><i class="material-icons">apps</i><span>رابط البريد الالكتروني</span></a></li></ul></li><li id="menu-form:j_idt97" role="menuitem"><a class="ripplelink" href="#" onclick="window.open('../../../../card.html', '_blank'); return false;"><i class="material-icons">apps</i><span>بطاقة الدخول للامتحان</span></a></li><li id="menu-form:dynamic-fields" role="menuitem"><a class="ripplelink dynamic-fields-menu-item" href="#" onclick="showDynamicFieldsSettings(); return false;"><i class="material-icons">settings</i><span>إعدادات الحقول الديناميكية</span></a></li></ul><script id="menu-form:j_idt67_s" type="text/javascript">PrimeFaces.cw("BarcelonaMenu","me",{id:"menu-form:j_idt67"});</script><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="-3532414394862448692:-3417641270037045008" autocomplete="off" />
+</form></div></div></div></div><div class="layout-tabmenu-content"><div class="layout-submenu-title clearfix"><span>الرسائل الواردة</span><a href="#" class="menu-button material-icons">menu</a><a href="#" class="menu-pin-button"><i class="fa fa-thumb-tack fa-rotate-90"></i></a></div><div class="layout-submenu-content"><div class="nano"><div class="nano-content menu-scroll-content">
+                <div class="inbox-tab">
+                    <ul>
+
+
+                    </ul>
+                </div></div></div></div></div><div class="layout-tabmenu-content"><div class="layout-submenu-title clearfix"><span>الواجب الدراسي</span><a href="#" class="menu-button material-icons">menu</a><a href="#" class="menu-pin-button"><i class="fa fa-thumb-tack fa-rotate-90"></i></a></div><div class="layout-submenu-content"><div class="nano"><div class="nano-content menu-scroll-content"></div></div></div></div><div class="layout-tabmenu-content"><div class="layout-submenu-title clearfix"><span>الهيئة التدريسية</span><a href="#" class="menu-button material-icons">menu</a><a href="#" class="menu-pin-button"><i class="fa fa-thumb-tack fa-rotate-90"></i></a></div><div class="layout-submenu-content"><div class="nano"><div class="nano-content menu-scroll-content">
+                <div class="team-tab">
+                    <ul>
+                        <li class="clearfix"><img id="j_idt107" src="/faces/javax.faces.resource/images/no_image.png?ln=barcelona-layout" alt="" width="45" />              
+                            <span class="name Fs11">عايش منور الحروب</span>
+                            <span class="location Fs11">عميد الكلية</span>
+                            <span class="location Fs11" dir="ltr">Aysh@zuj.edu.jo</span>
+                        </li>
+
+                        <li class="clearfix"><img id="j_idt110" src="/faces/javax.faces.resource/images/no_image.png?ln=barcelona-layout" alt="" width="45" />
+
+                            <span class="name Fs11">احمد عبدالحميد الخطيب</span>
+                            <span class="location Fs11">رئيس القسم</span>
+                            <span class="location Fs11" dir="ltr">hamadhcumm@yahoo.com</span>
+                        </li>
+
+                    </ul>
+                </div></div></div></div></div></div></div><script id="j_idt65_s" type="text/javascript">PrimeFaces.cw("Barcelona","widget_j_idt65",{id:"j_idt65"});</script>        
+    </div>
+<form id="contents" name="contents" method="post" action="/faces/ui/pages/student/index.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="contents" value="contents" />
+<a id="contents:mainReportViewer" href="/viewReport?docId=95bc6ba696a50da37fbbb98cc5bd" class="ui-link ui-widget" target="_blank"></a><span id="contents:msgs"></span><script id="contents:msgs_s" type="text/javascript">$(function(){PrimeFaces.cw('Growl','widget_contents_msgs',{id:'contents:msgs',sticky:false,life:6000,escape:true,msgs:[]});});</script>
+                    <div class="layout-main">
+
+
+                        <div class="layout-main-content"><div id="contents:j_idt114" class="ui-breadcrumb ui-module ui-widget ui-widget-header ui-helper-clearfix ui-corner-all" role="menu"><ul><li role="menuitem"><a tabindex="-1" title="الصفحة الرئيسية" class="ui-menuitem-link ui-corner-all ui-icon ui-icon-home" href="/"><span class="ui-menuitem-text"></span></a></li><li class="ui-breadcrumb-chevron ui-icon ui-icon-triangle-1-e"></li><li role="menuitem"><a tabindex="-1" title="الصفحة الرئيسية" class="ui-menuitem-link ui-corner-all" href="/faces/ui/pages/student/index.xhtml"><span class="ui-menuitem-text">الصفحة الرئيسية</span></a></li></ul></div><a id="contents:viewReport" href="/viewReport?docId=95bc6ba696a50da37fbbb98cc5bd" class="ui-link ui-widget" target="_blank"></a><div id="contents:j_idt117" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="contents:j_idt117_title" class="ui-dialog-title"></span></div><div class="ui-dialog-content ui-widget-content"><div id="contents:j_idt118" class="ui-panel ui-widget ui-widget-content ui-corner-all" data-widget="widget_contents_j_idt118"><div id="contents:j_idt118_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">الرسالة</span></div><div id="contents:j_idt118_content" class="ui-panel-content ui-widget-content"><div id="contents:j_idt119" class="ui-datatable ui-widget ui-datatable-reflow"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="contents:j_idt119_head"><tr role="row"><th id="contents:j_idt119:j_idt120" class="ui-state-default" role="columnheader" aria-label="#" style="width:7%;px"><span class="ui-column-title">#</span></th><th id="contents:j_idt119:j_idt122" class="ui-state-default" role="columnheader" aria-label="الرسالة"><span class="ui-column-title">الرسالة</span></th></tr></thead><tbody id="contents:j_idt119_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell"><label id="contents:j_idt119:0:j_idt121" class="ui-outputlabel ui-widget">1</label></td><td role="gridcell"><label id="contents:j_idt119:0:j_idt123" class="ui-outputlabel ui-widget" title="الفترة الحالية تقع ضمن فترة التقييم, سيتم حجب بعض الخدمات لحين قيامك بعملية التقييم لهذا الفصل">الفترة الحالية تقع ضمن فترة التقييم, سيتم حجب بعض الخدمات لحين قيامك بعملية التقييم لهذا الفصل</label></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell"><label id="contents:j_idt119:1:j_idt121" class="ui-outputlabel ui-widget">2</label></td><td role="gridcell"><label id="contents:j_idt119:1:j_idt123" class="ui-outputlabel ui-widget" title="الفترة الحالية تقع ضمن فترة التسجيل">الفترة الحالية تقع ضمن فترة التسجيل</label></td></tr></tbody></table></div></div><script id="contents:j_idt119_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_contents_j_idt119",{id:"contents:j_idt119",reflow:true});});</script><img id="contents:j_idt124" height="15px;" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" /><img id="contents:j_idt134" height="5px;" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" /><button id="contents:j_idt135" name="contents:j_idt135" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" onclick="PrimeFaces.ab({s:&quot;contents:j_idt135&quot;,onco:function(xhr,status,args){PF('notificationDialog').hide();;}});return false;" title="اغلاق" type="submit"><span class="ui-button-icon-left ui-icon ui-c fa fa-close white"></span><span class="ui-button-text ui-c">اغلاق</span></button><script id="contents:j_idt135_s" type="text/javascript">PrimeFaces.cw("CommandButton","widget_contents_j_idt135",{id:"contents:j_idt135"});</script></div></div><script id="contents:j_idt118_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt118",{id:"contents:j_idt118"});</script></div></div><script id="contents:j_idt117_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","notificationDialog",{id:"contents:j_idt117",modal:true});});</script>
+
+        <div class="ui-g dashboard">     
+            <div class="ui-g-12 ui-md-6 ui-lg-6">
+                <div class="ui-g card overview-box overview-box-1"><a href="/faces/ui/pages/student/instantMessages/index.xhtml" class="ui-link ui-widget">
+                            <span class="overview-box-name">الرسائل
+                                <i class="topbar-icon material-icons animated swing fa fa-fw fa-envelope-o"></i>
+                            </span>
+                            <span class="overview-box-name">0</span>
+                            <span class="overview-box-badge"></span><img id="contents:j_idt139" src="/faces/javax.faces.resource/images/dashboard/chart-1.svg?ln=barcelona-layout" alt="" /></a>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-6">
+                <div class="ui-g card overview-box overview-box-2"><a href="/faces/ui/pages/student/homeworks/index.xhtml" class="ui-link ui-widget">
+                        <span class="overview-box-name">الواجب الدراسي
+                            <i class="topbar-icon material-icons animated swing fa fa-fw fa-edit"></i>
+                        </span>
+                        <span class="overview-box-name">0</span>
+                        <span class="overview-box-badge"></span><img id="contents:j_idt143" src="/faces/javax.faces.resource/images/dashboard/chart-2.svg?ln=barcelona-layout" alt="" /></a>
+                </div>
+
+            </div>
+
+            <div class="ui-g-12 ui-lg-6">
+                <div class="user-card ui-shadow-content">
+                    <div class="user-card-header"><img id="contents:j_idt145" src="/faces/javax.faces.resource/images/dashboard/user-card-header.png?ln=barcelona-layout" alt="" />
+                    </div>
+                    <div class="user-card-content"> 
+                        <div class="user-card-name">
+                            <span class="dynamic-student-name"></span>
+                        </div>
+
+                        <div class="user-detail" style="direction: RTL;">
+                            <div class="icon-bar"><a href="/faces/ui/pages/student/schedule/index.xhtml" class="ui-link ui-widget active" title="جدول الطالب"><i href="" class="fa fa-table" style="font-size: x-large;"></i></a><a href="/faces/ui/pages/student/registration/index.xhtml" class="ui-link ui-widget active" title="التسجيل الالكتروني"><i class="fa fa-plus-circle" style="font-size: x-large;"></i></a>
+                            </div>
+                            <ul>
+                                <li class="clearfix">
+                                    <div class="project-progressbar">
+                                        <div class="project-progressbar-value" style="width: 100%"></div>
+                                    </div>
+                                    <i class="fa fa-edit fa-fw"></i>
+                                    <span class="project-title Fs12">الواجب الدراسي</span>
+                                    <span class="project-detail">
+                                            0
+                                        
+
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="project-progressbar">
+                                        <div class="project-progressbar-value" style="width: 50%"></div>
+                                    </div>
+                                    <i class="fa fa-usd fa-fw"></i>
+                                    <span class="project-title Fs12">الرصيد</span>
+                                    <span class="project-detail"><a href="/faces/ui/pages/student/financialRecord/index.xhtml" class="ui-link ui-widget">
+                                                0 مدين
+                                            </a>
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="project-progressbar">
+                                        <div class="project-progressbar-value" style="width: 00%"></div>
+                                    </div>
+                                    <i class="fa fa-users fa-fw"></i>
+                                    <span class="project-title Fs12">تنبيهات الغياب</span>
+                                    <span class="project-detail"><a href="/faces/ui/pages/student/absence/index.xhtml" class="ui-link ui-widget">
+                                                0
+                                            </a>
+
+                                    </span>                                 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-lg-6"><div id="contents:j_idt174" class="ui-panel ui-widget ui-widget-content ui-corner-all ui-shadow-content" data-widget="widget_contents_j_idt174"><div id="contents:j_idt174_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">صوت</span></div><div id="contents:j_idt174_content" class="ui-panel-content ui-widget-content">
+
+
+
+                    <ul style="list-style: none">
+
+                        <li><label id="contents:j_idt176" class="ui-outputlabel ui-widget" style="font-weight: bold !important;">كيف تقيم خدمة التسجيل من خلال الانترنت؟</label>
+                        </li>
+                        <li>
+
+                            <span class="pricing-feature-text Fs18"><table id="contents:j_idt179" role="presentation" class="ui-selectoneradio ui-widget"><tr><td><div class="ui-radiobutton ui-widget"><div class="ui-helper-hidden-accessible"><input id="contents:j_idt179:0" name="contents:j_idt179" type="radio" value="1" onchange="PrimeFaces.ab({s:&quot;contents:j_idt179&quot;,e:&quot;change&quot;,p:&quot;contents:j_idt179&quot;,u:&quot;contents:voteBtn&quot;});" /></div><div class="ui-radiobutton-box ui-widget ui-corner-all ui-state-default"><span class="ui-radiobutton-icon ui-icon ui-icon-blank ui-c"></span></div></div></td><td><label for="contents:j_idt179:0">ممتاز</label></td><td><div class="ui-radiobutton ui-widget"><div class="ui-helper-hidden-accessible"><input id="contents:j_idt179:1" name="contents:j_idt179" type="radio" value="2" onchange="PrimeFaces.ab({s:&quot;contents:j_idt179&quot;,e:&quot;change&quot;,p:&quot;contents:j_idt179&quot;,u:&quot;contents:voteBtn&quot;});" /></div><div class="ui-radiobutton-box ui-widget ui-corner-all ui-state-default"><span class="ui-radiobutton-icon ui-icon ui-icon-blank ui-c"></span></div></div></td><td><label for="contents:j_idt179:1">جيد جدا</label></td><td><div class="ui-radiobutton ui-widget"><div class="ui-helper-hidden-accessible"><input id="contents:j_idt179:2" name="contents:j_idt179" type="radio" value="3" onchange="PrimeFaces.ab({s:&quot;contents:j_idt179&quot;,e:&quot;change&quot;,p:&quot;contents:j_idt179&quot;,u:&quot;contents:voteBtn&quot;});" /></div><div class="ui-radiobutton-box ui-widget ui-corner-all ui-state-default"><span class="ui-radiobutton-icon ui-icon ui-icon-blank ui-c"></span></div></div></td><td><label for="contents:j_idt179:2">جيد</label></td></tr></table><script id="contents:j_idt179_s" type="text/javascript">$(function(){PrimeFaces.cw("SelectOneRadio","widget_contents_j_idt179",{id:"contents:j_idt179"});});</script>
+                            </span>
+                        </li>
+                        <li><img id="contents:j_idt182" height="30px" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" />
+                        </li>
+                        <li><button id="contents:voteBtn" name="contents:voteBtn" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left ui-state-disabled" style="width: 35%;" type="submit" disabled="disabled"><span class="ui-button-icon-left ui-icon ui-c fa fa-star-half-full white"></span><span class="ui-button-text ui-c">صوت</span></button><script id="contents:voteBtn_s" type="text/javascript">PrimeFaces.cw("CommandButton","widget_contents_voteBtn",{id:"contents:voteBtn"});</script>
+
+                        </li>
+                        <li>
+                        </li>
+                    </ul></div></div><script id="contents:j_idt174_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt174",{id:"contents:j_idt174"});</script>
+            </div>
+            <div class="ui-g-12 ui-lg-6 contacts"><div id="contents:j_idt187" class="ui-panel ui-widget ui-widget-content ui-corner-all ui-shadow-content" style="max-height: 300px;" data-widget="widget_contents_j_idt187"><div id="contents:j_idt187_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">الاخبار</span></div><div id="contents:j_idt187_content" class="ui-panel-content ui-widget-content">
+
+                    <marquee id="news" scrollamount="1" direction="up" loop="true" onmouseover="this.stop();" onmouseout="this.start();" style="width: 100%;text-align: inherit; max-height: 300px;">
+                        <ul>
+                        </ul>
+                    </marquee></div></div><script id="contents:j_idt187_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt187",{id:"contents:j_idt187"});</script>
+            </div>
+
+            <div class="ui-g-12 ui-lg-6 chat"><div id="contents:j_idt191" class="ui-panel ui-widget ui-widget-content ui-corner-all ui-shadow-content" data-widget="widget_contents_j_idt191"><div id="contents:j_idt191_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">معلومات الطالب</span></div><div id="contents:j_idt191_content" class="ui-panel-content ui-widget-content">
+
+                    <ul>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">رقم الطالب :</span>
+                            <span class="project-detail Fs12 dynamic-student-id">
+                                
+                            </span>
+                        </li>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">اسم الطالب :</span>
+                            <span class="project-detail Fs12 dynamic-student-name">
+                                
+                            </span>
+                        </li>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">الفصل الدراسي :</span>
+                            <span class="project-detail Fs12">
+                                الفصل الثاني 2024/2025
+                            </span>
+                        </li>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">الكلية :</span>
+                            <span class="project-detail Fs12">
+                                الــــعلـوم وتكنولوجيا المعلومات
+                            </span>
+                        </li>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">التخصص :</span>
+                            <span class="project-detail Fs12">
+                                الامن السيبراني
+                            </span>
+                        </li>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">الحالة :</span>
+                            <span class="project-detail Fs12">
+                                منتظم
+                            </span>
+                        </li>
+                        <li class="clearfix">
+                            <div class="project-progressbar">
+                                <div class="project-progressbar-value" style="width: 50%"></div>
+                            </div>
+                            <span class="project-title Fs12">المرشد الاكاديمي :</span>
+                            <span class="project-detail Fs12">
+                                محمد احمد عبدالحفيظ عاليه
+                            </span>
+                        </li>
+                    </ul></div></div><script id="contents:j_idt191_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt191",{id:"contents:j_idt191"});</script>
+            </div>
+
+            <div class="ui-g-12 ui-lg-12 chat"><div id="contents:j_idt194" class="ui-panel ui-widget ui-widget-content ui-corner-all ui-shadow-content" data-widget="widget_contents_j_idt194"><div id="contents:j_idt194_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">جدول الطالب</span></div><div id="contents:j_idt194_content" class="ui-panel-content ui-widget-content">
+                    <ul><div id="contents:schedules" class="ui-datatable ui-widget ui-datatable-reflow"><div class="ui-datatable-tablewrapper"><table role="grid"><thead id="contents:schedules_head"><tr role="row"><th id="contents:schedules:j_idt196" class="ui-state-default" role="columnheader" aria-label="رمز المقرر"><span class="ui-column-title">رمز المقرر</span></th><th id="contents:schedules:j_idt198" class="ui-state-default" role="columnheader" aria-label="اسم المقرر"><span class="ui-column-title">اسم المقرر</span></th><th id="contents:schedules:j_idt200" class="ui-state-default" role="columnheader" aria-label="الشعبة"><span class="ui-column-title">الشعبة</span></th><th id="contents:schedules:j_idt202" class="ui-state-default" role="columnheader" aria-label="النشاط"><span class="ui-column-title">النشاط</span></th><th id="contents:schedules:j_idt204" class="ui-state-default" role="columnheader" aria-label="قاعة"><span class="ui-column-title">قاعة</span></th><th id="contents:schedules:j_idt206" class="ui-state-default" role="columnheader" aria-label="الوقت"><span class="ui-column-title">الوقت</span></th></tr></thead><tbody id="contents:schedules_data" class="ui-datatable-data ui-widget-content"><tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell"><label id="contents:schedules:0:j_idt197" class="ui-outputlabel ui-widget">0125471</label></td><td role="gridcell"><label id="contents:schedules:0:j_idt199" class="ui-outputlabel ui-widget">منهجية بناء مشروع</label></td><td role="gridcell"><label id="contents:schedules:0:j_idt201" class="ui-outputlabel ui-widget">4</label></td><td role="gridcell"><label id="contents:schedules:0:j_idt203" class="ui-outputlabel ui-widget">نظري</label></td><td role="gridcell"><label id="contents:schedules:0:j_idt205" class="ui-outputlabel ui-widget">60</label></td><td role="gridcell"><label id="contents:schedules:0:j_idt207" class="ui-outputlabel ui-widget">[ 21:00_22:00 ] ث (و)</label></td></tr><tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell"><label id="contents:schedules:1:j_idt197" class="ui-outputlabel ui-widget">0125472</label></td><td role="gridcell"><label id="contents:schedules:1:j_idt199" class="ui-outputlabel ui-widget">مشروع تخرج</label></td><td role="gridcell"><label id="contents:schedules:1:j_idt201" class="ui-outputlabel ui-widget">6</label></td><td role="gridcell"><label id="contents:schedules:1:j_idt203" class="ui-outputlabel ui-widget">عملي</label></td><td role="gridcell"><label id="contents:schedules:1:j_idt205" class="ui-outputlabel ui-widget">60</label></td><td role="gridcell"><label id="contents:schedules:1:j_idt207" class="ui-outputlabel ui-widget">[ 14:00_17:00 ] ج (و)</label></td></tr><tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell"><label id="contents:schedules:2:j_idt197" class="ui-outputlabel ui-widget">0130111</label></td><td role="gridcell"><label id="contents:schedules:2:j_idt199" class="ui-outputlabel ui-widget">تصميم المنطق الرقمي</label></td><td role="gridcell"><label id="contents:schedules:2:j_idt201" class="ui-outputlabel ui-widget">2</label></td><td role="gridcell"><label id="contents:schedules:2:j_idt203" class="ui-outputlabel ui-widget">نظري</label></td><td role="gridcell"><label id="contents:schedules:2:j_idt205" class="ui-outputlabel ui-widget">60-9147</label></td><td role="gridcell"><label id="contents:schedules:2:j_idt207" class="ui-outputlabel ui-widget">[ 11:00_12:30 ] ن (م) ر (ن)</label></td></tr><tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row"><td role="gridcell"><label id="contents:schedules:3:j_idt197" class="ui-outputlabel ui-widget">0420101</label></td><td role="gridcell"><label id="contents:schedules:3:j_idt199" class="ui-outputlabel ui-widget">العلوم العسكرية</label></td><td role="gridcell"><label id="contents:schedules:3:j_idt201" class="ui-outputlabel ui-widget">2</label></td><td role="gridcell"><label id="contents:schedules:3:j_idt203" class="ui-outputlabel ui-widget">نظري</label></td><td role="gridcell"><label id="contents:schedules:3:j_idt205" class="ui-outputlabel ui-widget">60</label></td><td role="gridcell"><label id="contents:schedules:3:j_idt207" class="ui-outputlabel ui-widget">[ 17:30_19:00 ] ن (ن) ر (ك)</label></td></tr><tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row"><td role="gridcell"><label id="contents:schedules:4:j_idt197" class="ui-outputlabel ui-widget">0420171</label></td><td role="gridcell"><label id="contents:schedules:4:j_idt199" class="ui-outputlabel ui-widget">مهارات حياتية</label></td><td role="gridcell"><label id="contents:schedules:4:j_idt201" class="ui-outputlabel ui-widget">6</label></td><td role="gridcell"><label id="contents:schedules:4:j_idt203" class="ui-outputlabel ui-widget">نظري</label></td><td role="gridcell"><label id="contents:schedules:4:j_idt205" class="ui-outputlabel ui-widget">60</label></td><td role="gridcell"><label id="contents:schedules:4:j_idt207" class="ui-outputlabel ui-widget">[ 16:00_17:30 ] ن (ك) ر (ن)</label></td></tr></tbody></table></div><div id="contents:schedules_paginator_bottom" class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bottom" role="navigation" aria-label="Pagination"><span class="ui-paginator-current">(1 of 2)</span><a href="#" class="ui-paginator-first ui-state-default ui-corner-all ui-state-disabled" aria-label="First Page"><span class="ui-icon ui-icon-seek-first">p</span></a><a href="#" class="ui-paginator-prev ui-state-default ui-corner-all ui-state-disabled" aria-label="Previous Page"><span class="ui-icon ui-icon-seek-prev">p</span></a><span class="ui-paginator-pages"><a class="ui-paginator-page ui-state-default ui-state-active ui-corner-all" tabindex="0" href="#">1</a><a class="ui-paginator-page ui-state-default ui-corner-all" tabindex="0" href="#">2</a></span><a href="#" class="ui-paginator-next ui-state-default ui-corner-all" aria-label="Next Page" tabindex="0"><span class="ui-icon ui-icon-seek-next">p</span></a><a href="#" class="ui-paginator-last ui-state-default ui-corner-all" aria-label="Last Page" tabindex="0"><span class="ui-icon ui-icon-seek-end">p</span></a><label id="contents:schedules_rppLabel" for="contents:schedules:j_id2" class="ui-paginator-rpp-label ui-helper-hidden">Rows Per Page</label><select id="contents:schedules:j_id2" name="contents:schedules_rppDD" aria-labelledby="contents:schedules_rppLabel" class="ui-paginator-rpp-options ui-widget ui-state-default ui-corner-left" value="5" autocomplete="off"><option value="5" selected="selected">5</option><option value="10">10</option><option value="15">15</option></select></div></div><script id="contents:schedules_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_contents_schedules",{id:"contents:schedules",paginator:{id:['contents:schedules_paginator_bottom'],rows:5,rowCount:6,page:0,currentPageTemplate:'({currentPage} of {totalPages})',alwaysVisible:false},reflow:true});});</script>
+                    </ul></div></div><script id="contents:j_idt194_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt194",{id:"contents:j_idt194"});</script>
+            </div>
+
+            <div class="ui-g-12 activity-feed"><div id="contents:j_idt210" class="ui-panel ui-widget ui-widget-content ui-corner-all ui-shadow-content" data-widget="widget_contents_j_idt210"><div id="contents:j_idt210_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">معلومات الطالب الأكاديمية</span></div><div id="contents:j_idt210_content" class="ui-panel-content ui-widget-content">
+                    <h3></h3>
+                    <p></p>
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-4">
+                            <span>المعدل التراكمي</span>
+                            <div class="knob tax">86.1</div>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <span>انجاز الخطة</span>
+                            <div class="knob invoice">88 %</div>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <span>مستوى الطالب</span>
+                            <div class="knob expense">4</div>
+                        </div>
+                    </div></div></div><script id="contents:j_idt210_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt210",{id:"contents:j_idt210"});</script>
+            </div>
+            <div class="ui-g-12 "><div id="contents:j_idt216" class="ui-panel ui-widget ui-widget-content ui-corner-all ui-shadow-content" data-widget="widget_contents_j_idt216"><div id="contents:j_idt216_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title">معلومات الطالب الأكاديمية</span></div><div id="contents:j_idt216_content" class="ui-panel-content ui-widget-content">
+                    <h3></h3>
+                    <p></p>
+                    <div class="ui-g">
+
+                        <div class="ui-g-12 ui-md-9"><div id="contents:j_idt218" class="ui-panel ui-widget ui-widget-content ui-corner-all chart-panel" data-widget="widget_contents_j_idt218"><div id="contents:j_idt218_content" class="ui-panel-content ui-widget-content"><div id="contents:semestersGPA" style="direction: ltr !important;"></div><script id="contents:semestersGPA_s" type="text/javascript">$(function(){PrimeFaces.cw('Chart','widget_contents_semestersGPA',{id:'contents:semestersGPA',type:'bar',responsive:true,data:[[89.2],[85.4],[87.3],[86.6],[86.1],[86.5],[86.6],[86.1],[0.0]],title:"معدل الطالب الفصلي",legendPosition:"ne",axes:{yaxis: {label:"المعدل الفصلي",min:0,renderer:$.jqplot.LinearAxisRenderer,tickOptions:{angle:0,formatString:"%.2f"}},xaxis: {label:"الفصل الدراسي",renderer:$.jqplot.CategoryAxisRenderer,tickOptions:{angle:-30}}},series:[{label:'الفصل الأول 2021/2022'},{label:'الفصل الثاني 2021/2022'},{label:'الفصل الصيفي 2021/2022'},{label:'الفصل الأول 2022/2023'},{label:'الفصل الثاني 2022/2023'},{label:'الفصل الأول 2023/2024'},{label:'الفصل الثاني 2023/2024'},{label:'الفصل الأول 2024/2025'},{label:'الفصل الثاني 2024/2025'}],ticks:["20211"],orientation:"vertical",animate:true,showPointLabels:true},'charts');});</script></div></div><script id="contents:j_idt218_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt218",{id:"contents:j_idt218"});</script>
+                        </div>
+                        <div class="ui-g-12 ui-md-3">
+
+                        </div>
+
+
+                    </div></div></div><script id="contents:j_idt216_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_j_idt216",{id:"contents:j_idt216"});</script>
+            </div>
+        </div><div id="contents:j_idt226" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container ui-dialog-rtl"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="contents:j_idt226_title" class="ui-dialog-title">تفاصيل الخبر</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content"><div id="contents:j_idt227" class="ui-scrollpanel ui-widget ui-widget-content"><div id="contents:newsPanel" class="ui-panel ui-widget ui-widget-content ui-corner-all" data-widget="widget_contents_newsPanel"><div id="contents:newsPanel_header" class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"><span class="ui-panel-title"></span></div><div id="contents:newsPanel_content" class="ui-panel-content ui-widget-content"><table id="contents:j_idt228" class="ui-panelgrid ui-widget" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="contents:j_idt230" height="10px;" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" /></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="contents:j_idt231" class="ui-outputlabel ui-widget"></label></td></tr></tbody></table></div></div><script id="contents:newsPanel_s" type="text/javascript">PrimeFaces.cw("Panel","widget_contents_newsPanel",{id:"contents:newsPanel"});</script></div><script id="contents:j_idt227_s" type="text/javascript">PrimeFaces.cw("ScrollPanel","widget_contents_j_idt227",{id:"contents:j_idt227"});</script></div></div><script id="contents:j_idt226_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","newsDialogWV",{id:"contents:j_idt226",modal:true,closeOnEscape:true});});</script>
+
+<!-- Dynamic Fields Settings Dialog -->
+<div id="dynamic-fields-dialog" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container ui-dialog-rtl" style="width: 80%; max-width: 1000px;">
+    <div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top">
+        <span class="ui-dialog-title">إعدادات الحقول الديناميكية</span>
+        <button onclick="DynamicFields.randomizeAllFields(); return false;" 
+                style="float: left; margin-left: 10px; padding: 5px 10px; background: linear-gradient(45deg, #ff6b6b, #feca57); color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer;"
+                title="توليد بيانات عشوائية">
+            <i class="fa fa-random"></i>
+        </button>
+        <a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close" onclick="hideDynamicFieldsSettings(); return false;">
+            <span class="ui-icon ui-icon-closethick"></span>
+        </a>
+    </div>
+    <div class="ui-dialog-content ui-widget-content" style="height: 600px; overflow-y: auto;">
+        <div id="dynamic-fields-container">
+            <!-- Dynamic fields settings form will be inserted here -->
+        </div>
+    </div>
+</div>
+
+    <div class="footer clearfix">
+        <div class="card">
+            <div class="ui-g footer-content">
+
+                <div style="alignment-adjust: central;">
+                    <a href="https://www.facebook.com/AlZaytoonahUniversityOfficial" target="_blank"><i class="fa fa-facebook-square" style="color: #3b5998;"></i></a>
+                    <a href="https://twitter.com/alzaytoonahunv" target="_blank"><i class="fa fa-twitter" style="color: #00acee;"></i></a>
+                    <a href="https://www.youtube.com/alzaytoonahuniversity" target="_blank"><i class="fa fa-youtube" style="color: #ff0000;"></i></a>
+                    <a href="https://www.linkedin.com/company/al-zaytoonah-university-of-jordan" target="_blank"><i class="fa fa-linkedin" style="color: #0072b1;"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Al-Zaytoonah_University_of_Jordan" target="_blank"><i class="fa fa-wikipedia-w" style="color: #000000;"></i></a>
+                </div>
+            </div>
+            <div class="footer-desg"><img id="contents:j_idt233" src="/faces/javax.faces.resource/images/edugateWhite.svg?ln=barcelona-layout" alt="" style="width: 10%;" /><img id="contents:j_idt234" alt="" src="/faces/javax.faces.resource/spacer/dot_clear.gif?ln=primefaces&amp;v=6.0" style="width: 0%;" />
+                جامعة الزيتونة الأردنية 2020
+            </div>
+        </div>
+    </div>
+                        </div>
+
+
+                    </div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:3" value="-3532414394862448692:-3417641270037045008" autocomplete="off" />
+</form>
+            </div><div id="j_idt238"></div><script id="j_idt238_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_j_idt238",{id:"j_idt238",start:function(){PF('statusDialog').show()},success:function(){PF('statusDialog').hide()}});});</script><div id="j_idt239" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-content ui-widget-content">
+                <i class="fa fa-circle-o-notch fa-spin ajax-loader" aria-hidden="true"></i></div></div><script id="j_idt239_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","statusDialog",{id:"j_idt239",draggable:false,resizable:false,modal:true});});</script><div id="j_idt241" style="width:32px;height:32px;position:fixed;right:7px;bottom:7px"><div id="j_idt241_start" style="display:none">
+                    <i class="fa fa-circle-o-notch fa-spin ajax-loader" aria-hidden="true"></i></div><div id="j_idt241_complete" style="display:none"></div></div><script id="j_idt241_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_j_idt241",{id:"j_idt241"});});</script>
+
+<!-- Dynamic Fields Settings JavaScript -->
+<script type="text/javascript">
+function showDynamicFieldsSettings() {
+    const dialog = document.getElementById('dynamic-fields-dialog');
+    const container = document.getElementById('dynamic-fields-container');
+    
+    // Generate and insert the settings form
+    container.innerHTML = DynamicFields.generateSettingsForm();
+    DynamicFields.attachSettingsEventListeners();
+    
+    // Show the dialog
+    dialog.style.display = 'block';
+    dialog.classList.remove('ui-hidden-container');
+    
+    // Center the dialog
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const dialogWidth = dialog.offsetWidth;
+    const dialogHeight = dialog.offsetHeight;
+    
+    dialog.style.left = Math.max(0, (windowWidth - dialogWidth) / 2) + 'px';
+    dialog.style.top = Math.max(0, (windowHeight - dialogHeight) / 2) + 'px';
+    
+    // Add overlay
+    if (!document.querySelector('.ui-widget-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'ui-widget-overlay ui-front';
+        overlay.style.zIndex = '1000';
+        overlay.onclick = function() { hideDynamicFieldsSettings(); };
+        document.body.appendChild(overlay);
+    }
+}
+
+function hideDynamicFieldsSettings() {
+    const dialog = document.getElementById('dynamic-fields-dialog');
+    const overlay = document.querySelector('.ui-widget-overlay');
+    
+    dialog.style.display = 'none';
+    dialog.classList.add('ui-hidden-container');
+    
+    if (overlay) {
+        overlay.parentNode.removeChild(overlay);
+    }
+}
+
+// Initialize dynamic fields when page loads
+$(document).ready(function() {
+    // Add dynamic field indicators
+    setTimeout(function() {
+        $('.student-info span, .academic-info .knob, .financial-info a, .topbar .profile-name, .topbar .profile-role').each(function() {
+            $(this).addClass('dynamic-field-highlight');
+            $(this).attr('title', 'حقل ديناميكي - يمكن تخصيصه من الإعدادات');
+        });
+    }, 1000);
+});
+</script></body>
+</html>

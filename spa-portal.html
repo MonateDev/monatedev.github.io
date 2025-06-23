@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="RTL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البوابة الالكترونية - SPA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/barcelona-layout/images/x-icon.jpeg" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="spa-assets/css/spa-styles.css" rel="stylesheet">
+</head>
+<body class="main-body">
+    <div id="app" class="layout-wrapper layout-rtl">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-overlay">
+            <div class="loading-content">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">جاري التحميل...</span>
+                </div>
+                <p class="mt-3">جاري تحميل البوابة...</p>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="topbar">
+            <div class="logo">
+                <img src="faces/javax.faces.resource/images/x-icon.jpeg" alt="شعار الجامعة" />
+            </div>
+            <a href="#" class="app-name white">البوابة الالكترونية</a>
+            
+            <!-- User Profile Section -->
+            <div class="user-profile">
+                <div class="profile-image">
+                    <img id="user-avatar" src="faces/javax.faces.resource/no_image.png" alt="صورة المستخدم" />
+                </div>
+                <div class="profile-info">
+                    <span id="user-id" class="profile-name">{{ userId }}</span>
+                    <span id="user-type" class="profile-role">{{ userType }}</span>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-outline-light btn-sm" onclick="showUserPreferences()">
+                        <i class="fa fa-cog"></i> الإعدادات
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm" onclick="logout()">
+                        <i class="fa fa-sign-out"></i> خروج
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="sidebar">
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                    <i class="fa fa-home"></i>
+                    <span>الصفحة الرئيسية</span>
+                </a>
+                <a href="#messages" class="nav-item" data-page="messages">
+                    <i class="fa fa-envelope"></i>
+                    <span>الرسائل</span>
+                    <span id="messages-count" class="badge">0</span>
+                </a>
+                <a href="#homework" class="nav-item" data-page="homework">
+                    <i class="fa fa-edit"></i>
+                    <span>الواجب الدراسي</span>
+                    <span id="homework-count" class="badge">0</span>
+                </a>
+                <a href="#schedule" class="nav-item" data-page="schedule">
+                    <i class="fa fa-table"></i>
+                    <span>الجدول الدراسي</span>
+                </a>
+                <a href="#registration" class="nav-item" data-page="registration">
+                    <i class="fa fa-plus-circle"></i>
+                    <span>التسجيل</span>
+                </a>
+                <a href="#financial" class="nav-item" data-page="financial">
+                    <i class="fa fa-usd"></i>
+                    <span>الشؤون المالية</span>
+                </a>
+                <a href="#settings" class="nav-item" data-page="settings">
+                    <i class="fa fa-cog"></i>
+                    <span>إعدادات الحقول</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="layout-main">
+            <div class="layout-main-content">
+                <!-- Dashboard Page -->
+                <div id="dashboard-page" class="page-content active">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <!-- Alert Messages -->
+                    <div id="alert-messages" class="alert-container">
+                        <!-- Dynamic alerts will be inserted here -->
+                    </div>
+
+                    <!-- Dashboard Cards -->
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card overview-card-1">
+                            <div class="card-header">
+                                <i class="fa fa-envelope"></i>
+                                <span>الرسائل</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-number" id="dashboard-messages">0</div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card overview-card-2">
+                            <div class="card-header">
+                                <i class="fa fa-edit"></i>
+                                <span>الواجب الدراسي</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-number" id="dashboard-homework">0</div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card overview-card-3">
+                            <div class="card-header">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <span>تنبيهات الغياب</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-number" id="dashboard-absence">0</div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card overview-card-4">
+                            <div class="card-header">
+                                <i class="fa fa-usd"></i>
+                                <span>الرصيد المالي</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-number" id="dashboard-balance">0 دينار</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Info Card -->
+                    <div class="user-info-card">
+                        <div class="user-card-header">
+                            <h4 id="user-full-name">{{ userFullName }}</h4>
+                        </div>
+                        <div class="user-card-content">
+                            <div class="user-details">
+                                <div class="detail-item">
+                                    <span class="label">رقم الطالب:</span>
+                                    <span id="student-number" class="value">{{ studentNumber }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">الكلية:</span>
+                                    <span id="faculty" class="value">{{ faculty }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">التخصص:</span>
+                                    <span id="major" class="value">{{ major }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">المستوى:</span>
+                                    <span id="level" class="value">{{ level }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Poll Section -->
+                    <div class="poll-section">
+                        <div class="poll-card">
+                            <h5>استطلاع رأي</h5>
+                            <p>كيف تقيم خدمة التسجيل من خلال الانترنت؟</p>
+                            <div class="poll-options">
+                                <label><input type="radio" name="poll" value="excellent"> ممتاز</label>
+                                <label><input type="radio" name="poll" value="very-good"> جيد جداً</label>
+                                <label><input type="radio" name="poll" value="good"> جيد</label>
+                            </div>
+                            <button class="btn btn-primary" onclick="submitPoll()">صوت</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div id="settings-page" class="page-content">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                                <li class="breadcrumb-item active">إعدادات الحقول</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <div class="settings-container">
+                        <h3>إعدادات البيانات الشخصية</h3>
+                        <p class="text-muted">يمكنك تخصيص البيانات التي تظهر في البوابة من خلال النموذج أدناه</p>
+                        
+                        <form id="user-settings-form" class="settings-form">
+                            <div class="form-section">
+                                <h5>البيانات الأساسية</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-user-id">رقم الطالب</label>
+                                            <input type="text" class="form-control" id="input-user-id" placeholder="مثال: ">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-user-type">نوع المستخدم</label>
+                                            <select class="form-control" id="input-user-type">
+                                                <option value="طالب">طالب</option>
+                                                <option value="طالبة">طالبة</option>
+                                                <option value="موظف">موظف</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="input-full-name">الاسم الكامل</label>
+                                    <input type="text" class="form-control" id="input-full-name" placeholder="مثال: أحمد محمود منور أبوزيد">
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h5>البيانات الأكاديمية</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-faculty">الكلية</label>
+                                            <input type="text" class="form-control" id="input-faculty" placeholder="مثال: كلية تكنولوجيا المعلومات">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-major">التخصص</label>
+                                            <input type="text" class="form-control" id="input-major" placeholder="مثال: هندسة البرمجيات">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-level">المستوى الدراسي</label>
+                                            <select class="form-control" id="input-level">
+                                                <option value="السنة الأولى">السنة الأولى</option>
+                                                <option value="السنة الثانية">السنة الثانية</option>
+                                                <option value="السنة الثالثة">السنة الثالثة</option>
+                                                <option value="السنة الرابعة">السنة الرابعة</option>
+                                                <option value="ماجستير">ماجستير</option>
+                                                <option value="دكتوراه">دكتوراه</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input-student-number">الرقم الجامعي</label>
+                                            <input type="text" class="form-control" id="input-student-number" placeholder="مثال: ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h5>الإحصائيات</h5>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-messages">عدد الرسائل</label>
+                                            <input type="number" class="form-control" id="input-messages" min="0" value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-homework">الواجبات</label>
+                                            <input type="number" class="form-control" id="input-homework" min="0" value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-absence">تنبيهات الغياب</label>
+                                            <input type="number" class="form-control" id="input-absence" min="0" value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-balance">الرصيد المالي</label>
+                                            <input type="text" class="form-control" id="input-balance" placeholder="مثال: 500 دينار">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                                <button type="button" class="btn btn-secondary" onclick="resetForm()">إعادة تعيين</button>
+                                <button type="button" class="btn btn-danger" onclick="clearData()">مسح البيانات</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Other Pages (Messages, Homework, etc.) -->
+                <div id="messages-page" class="page-content">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                                <li class="breadcrumb-item active">الرسائل</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <h3>الرسائل</h3>
+                    <p>لا توجد رسائل جديدة.</p>
+                </div>
+
+                <div id="homework-page" class="page-content">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                                <li class="breadcrumb-item active">الواجب الدراسي</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <h3>الواجب الدراسي</h3>
+                    <p>لا توجد واجبات جديدة.</p>
+                </div>
+
+                <div id="schedule-page" class="page-content">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                                <li class="breadcrumb-item active">الجدول الدراسي</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <h3>الجدول الدراسي</h3>
+                    <p>سيتم عرض الجدول الدراسي هنا.</p>
+                </div>
+
+                <div id="registration-page" class="page-content">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                                <li class="breadcrumb-item active">التسجيل</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <h3>التسجيل الإلكتروني</h3>
+                    <p>نظام التسجيل في المواد الدراسية.</p>
+                </div>
+
+                <div id="financial-page" class="page-content">
+                    <div class="breadcrumb-container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#dashboard">الصفحة الرئيسية</a></li>
+                                <li class="breadcrumb-item active">الشؤون المالية</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <h3>الشؤون المالية</h3>
+                    <p>معلومات الرصيد والمدفوعات.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="userPreferencesModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">خصائص المستخدم</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>إعدادات المستخدم ستظهر هنا.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="spa-assets/js/spa-main.js"></script>
+</body>
+</html>
