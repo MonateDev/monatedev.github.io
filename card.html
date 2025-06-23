@@ -44,7 +44,7 @@ body{font-family:"Tahoma",sans-serif;margin:0;background:#f8f8f8;}
   <div class="header">
       <div class="exam-wrap">
           <div class="exam-no" id="exam-number">20242</div>
-          <div class="date">التاريخ : 22/06/2025</div>
+          <div class="date" id="current-date">التاريخ : 22/06/2025</div>
       </div>
       <div class="header-content">
           <h1>1</h1>
@@ -111,6 +111,15 @@ function getCurrentTime() {
     return `${hours}:${minutes}`;
 }
 
+// Get current date in DD/MM/YYYY format
+function getCurrentDate() {
+    const now = new Date();
+    const day = now.getDate().toString().padStart(2, '0');
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const year = now.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
 // Load student photo from localStorage
 function loadStudentPhoto() {
     try {
@@ -150,6 +159,12 @@ document.addEventListener('DOMContentLoaded', function() {
         timeElement.textContent = `الوقت : ${getCurrentTime()}`;
     }
     
+    // Update date to current date
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        dateElement.textContent = `التاريخ : ${getCurrentDate()}`;
+    }
+    
     // Load student photo from localStorage
     loadStudentPhoto();
     
@@ -183,4 +198,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
