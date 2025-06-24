@@ -284,10 +284,13 @@
     border-radius: 3px;
     opacity: 0;
     transition: opacity 0.3s;
+    /* Disabled - always keep hidden */
+    display: none !important;
 }
 
 .dynamic-field-highlight:hover::after {
-    opacity: 1;
+    opacity: 0; /* Keep hidden even on hover */
+    display: none !important;
 }
 
 /* Responsive design */

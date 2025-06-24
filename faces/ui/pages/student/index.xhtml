@@ -423,25 +423,28 @@ $(document).ready(function() {
         console.warn('DynamicFields system not available');
     }
     
-    // Add dynamic field indicators
+    // Add dynamic field indicators (normal styling without borders or hover effects)
     setTimeout(function() {
         $('.dynamic-student-id, .dynamic-student-name, .dynamic-semester, .dynamic-college, .dynamic-major, .dynamic-status, .dynamic-advisor').each(function() {
-            $(this).addClass('dynamic-field-highlight');
-            $(this).attr('title', 'حقل ديناميكي - يمكن تخصيصه من الإعدادات');
-            $(this).css({
-                'border': '1px dashed #007bff',
-                'padding': '2px 4px',
-                'border-radius': '3px',
-                'cursor': 'pointer'
-            });
+            // Remove the dynamic-field-highlight class to disable hover effects
+            // $(this).addClass('dynamic-field-highlight');
+            // Remove the title and styling that makes it look like an interactive element
+            // $(this).attr('title', 'حقل ديناميكي - يمكن تخصيصه من الإعدادات');
+            // Remove all styling that creates borders, padding, and cursor changes
+            // $(this).css({
+            //     'border': '1px dashed #007bff',
+            //     'padding': '2px 4px',
+            //     'border-radius': '3px',
+            //     'cursor': 'pointer'
+            // });
             
-            // Add click handler to open settings
-            $(this).on('click', function() {
-                showDynamicFieldsSettings();
-            });
+            // Remove click handler to prevent opening settings
+            // $(this).on('click', function() {
+            //     showDynamicFieldsSettings();
+            // });
         });
         
-        console.log('Dynamic field highlighting applied');
+        console.log('Dynamic field highlighting disabled - fields will appear normal');
     }, 1000);
 });
 </script></body>
