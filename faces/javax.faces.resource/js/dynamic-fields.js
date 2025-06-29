@@ -204,7 +204,8 @@ const dynamicFieldsConfig = {
         'enrolled-courses': {
             selector: '.dynamic-courses-table, #contents\\:schedules tbody, .dynamic-exam-courses-body',
             label: 'المقررات المسجلة',
-            type: 'courses'
+            type: 'courses',
+            defaultValue: []
         }
     }
 };
@@ -420,7 +421,7 @@ const DynamicFields = {
         
         // Initialize demo courses table if it exists
         const stored = this.loadFromStorage();
-        const courses = stored['courses'] || dynamicFieldsConfig.enrolledCourses.courses.defaultValue;
+        const courses = stored['enrolled-courses'] || dynamicFieldsConfig.enrolledCourses['enrolled-courses'].defaultValue;
         this.updateDemoCoursesTable(courses);
     },
     
@@ -635,6 +636,11 @@ const DynamicFields = {
         
         // Update the field in real-time
         this.updateFieldInDOM(fieldId, courses);
+        
+        // Also save to localStorage for persistence
+        const stored = this.loadFromStorage();
+        stored[fieldId] = courses;
+        this.saveToStorage(stored);
     },
     
     // Import sample courses
@@ -877,7 +883,7 @@ const DynamicFields = {
         });
 
         // Process courses field
-        const coursesEditor = document.querySelector('.courses-editor[data-field-id="courses"]');
+        const coursesEditor = document.querySelector('.courses-editor[data-field-id="enrolled-courses"]');
         if (coursesEditor) {
             const courses = [];
             const courseRows = coursesEditor.querySelectorAll('.course-row');
@@ -902,11 +908,11 @@ const DynamicFields = {
             });
 
             // Check if courses changed
-            const currentCourses = stored['courses'] || [];
+            const currentCourses = stored['enrolled-courses'] || [];
             if (JSON.stringify(currentCourses) !== JSON.stringify(courses)) {
-                stored['courses'] = courses;
+                stored['enrolled-courses'] = courses;
                 hasChanges = true;
-                this.updateFieldInDOM('courses', courses);
+                this.updateFieldInDOM('enrolled-courses', courses);
             }
         }
 
