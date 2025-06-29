@@ -95,14 +95,6 @@ body{font-family:"Tahoma",sans-serif;margin:0;background:#f8f8f8;}
 </div>
 
 <script>
-// Generate random exam number in the range around 20242
-function generateRandomExamNumber() {
-    // Generate random number between 20200 and 20299 (around 20242)
-    const min = 20200;
-    const max = 20299;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 // Get current time in HH:MM format
 function getCurrentTime() {
     const now = new Date();
@@ -147,10 +139,10 @@ function loadStudentPhoto() {
 
 // Card uses the dynamic fields system properly
 document.addEventListener('DOMContentLoaded', function() {
-    // Randomize exam number on page load
+    // Set exam number to fixed value 20242
     const examNumberElement = document.getElementById('exam-number');
     if (examNumberElement) {
-        examNumberElement.textContent = generateRandomExamNumber();
+        examNumberElement.textContent = '20242';
     }
     
     // Update time to current time
